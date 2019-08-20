@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<script>
+
+  // "use strict"
+
+  let obj = {}
+  console.log(obj);
+  console.log(obj["toString"]["name"]); //关联数组   点字符是一样的效果的   
+  // 但是有一点是要强调的  就是右边的数据必须是字符串类型的  或是  可以转成字符串类型的
+
+  console.log(obj.toString.name);       // 同上
+
+
+  let sustomer = {
+    address0: "我",
+    address1: "是",
+    address2: "帅",
+    address3: "哥"
+  }
+  let addr = "";
+  for (let i = 0; i < 4; i++) {
+    addr += sustomer["address" + i] + '\n';
+  }
+  console.log(addr);
+
+
+  // 四大特性: 
+  // 读(get)   写(set)   是否可枚举   是否可配置
+  let random = {
+    x: 1
+  }
+  console.log(Object.getOwnPropertyDescriptor(random, "x"))
+
+  Object.defineProperty(random, "x", { writable: false, value: 2 });
+  console.log(Object.getOwnPropertyDescriptor(random, "x"));
+  random.x = 3;
+  console.log(random.x); // 当在严格模式下,是会报错的.    正常的是不会报错的,修改操作无效.
+
+  Object.defineProperty(random, "x", { value: 3 });
+  console.log(random.x);
+
+  Object.defineProperty(random, "x", { get: function () { return 0 } })
+  console.log(random.x);
+
+
+  
+
+</script>

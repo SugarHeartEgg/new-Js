@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关闭监听</title>
+</head>
+
+<body>
+  <H1>页面监听事件</H1>
+</body>
+
+</html>
+<script language="JavaScript" type="text/javascript">
+  window.onbeforeunload = function (e) {
+    var message = '关闭提示';
+    e = e || window.event;
+    if (e) {
+      console.log(e);
+      e.returnValue = message;
+    }
+    return message;
+  }; 
+</script>

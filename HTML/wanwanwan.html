@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>添加一个input玩玩 -- 连帅恒</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+
+<body>
+  <div id="app" style="padding: 20px;">
+    <el-button @click="add">添加</el-button>
+    <el-table :data="data">
+      <el-table-column prop="name" label="名称">
+        <template slot-scope="scope">
+          <el-input v-model="data[scope.$index].name"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column prop="age" label="年龄">
+        <template slot-scope="scope">
+          <el-input v-model="data[scope.$index].age"></el-input>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button @click="deleteRow(scope.$index)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: () => {
+      return {
+        data: [
+          {
+            name: "",
+            age: ""
+          }
+        ]
+      }
+    },
+    methods: {
+      add() {
+        this.data.push({})
+      },
+      deleteRow(index) {
+        if (this.data.length != 1) {
+          this.data.splice(index, 1)
+          this.$message.success(" 删 除 成 功 。 -- 连帅恒 。 ")
+        } else if (this.data.length == 1 && index == 0) {
+          this.$message.warning(" 不 可 全 删 , 至 少 填 写 一 项 。 -- 连帅恒 。 ")
+        }
+      }
+    }
+  })
+</script>
+
+</html>

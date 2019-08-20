@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+  o = {
+    x: 1,
+    y: {
+      z: [false, null, ""]
+    }
+  }
+  console.log(o);
+  
+  // 序例化对象
+  s = JSON.stringify(o);
+  console.log(s);
+  p = JSON.parse(s);
+  console.log(p);
+
+
+  
+  let a = { x: 1, y: 2 };
+  console.log(a.toString());
+
+
+  let as = ["132","456","789"].toLocaleString();
+  console.log(as);
+  
+  console.log(Date.valueOf());
+  
+
+</script>

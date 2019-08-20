@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  var num = "2019-04-17 00:00:00";
+  var endnum = "2019-04-16 23:59:59";
+
+  if (num != "" && endnum != "") {
+    // startTime 开始时间
+    console.log(1);
+
+    var starttime = num.replace(/-/g, "/");
+    console.log(starttime);
+    
+    var stime = new Date(starttime);
+    stime = stime.getTime();
+    console.log(stime);
+
+    // endTime 结束时间
+    var endtime = endnum.replace(/-/g, "/");
+    var etime = new Date(endtime);
+    etime = etime.getTime();
+    console.log(etime);
+    if (stime > etime) {
+      alert("'开始时间'不能大于'结束时间'")
+      break
+    }
+  }
+</script>

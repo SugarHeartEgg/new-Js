@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>高程</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+  </body>
+</html>
+
+<script>
+  var o3 = Object.create(Object.prototype);
+  console.log(o3);
+  var book = {};
+  book["main title"] = "ECMAScript";
+  console.log(book);
+
+  var object = {
+    num: 0,
+    siaze: 1
+  };
+
+  console.log("nut" in object); // false
+  // 检测是否是右侧对象的自有属性与继承属性
+
+  console.log(object.hasOwnProperty("num")); // true
+  console.log(object.hasOwnProperty("toString")); // false
+  // 检测是否是右侧对象的自有属性(排除继承的属性)
+
+  console.log(object.propertyIsEnumerable("num")); // true
+  // 是hasOwProperty()方法的增强版 必须是自有属性并且可以枚举且不能是继承的
+
+  let a = { val: 0 };
+  a.valueOf = function() {
+    return ++this.val;
+  };
+  // 把这个函数放到a的原型上
+  if (a == 1 && a == 2 && a == 3) {
+    console.log(1);
+  }
+
+  let b = {};
+  console.log(b.valueOf.name);
+
+  var w = {
+    x: 1,
+    y: 2,
+    z: 3
+  };
+  console.log(w.propertyIsEnumerable(toString));
+  for (const p in w) {
+    console.log(p);
+    // toString 是不可枚举的
+  }
+
+  var p = {
+    q: "nihai",
+    w: 520
+  };
+  function extend(o, p) {
+    for (prop in p) {
+      o[prop] = p[prop];
+    }
+    return o;
+  }
+
+  function union(o, p) {
+    return extend(extend({}, o), p);
+  }
+
+  var st = {
+    // data_prop: value,
+    get accessoer_prop() {},
+    set accessoer_prop(value) {}
+  };
+
+  var q = {
+    x: 1
+  };
+
+  var serialnum = {
+    $n: 0,
+    get next() {
+      return this.$n++;
+    },
+    set next(n) {
+      if (n >= this.$n) this.$n = n;
+      else throw "序列号得值不能比当前值小";
+    }
+  };
+  console.log(serialnum);
+
+  var random = {
+    get octet() {
+      return Math.floor(Math.random() * 10000);
+    },
+    get uint() {
+      return Math.floor(Math.random() * 10000);
+    },
+    get int() {
+      return Math.floor(Math.random() * 10000);
+    }
+  };
+  console.log(random);
+</script>
