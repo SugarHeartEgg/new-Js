@@ -27,5 +27,11 @@ console.log(isFunction(v));  //  ---> true
  * 函数式
  *
  */
+var sum = function (x, y) {
+  return x + y
+}
 var square = function (x) {
+  return x * x
+}
+var deviations = Math.sqrt(deviations.map(square).reduce(sum) / (data.length - 1))
 
