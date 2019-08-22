@@ -24,10 +24,3 @@ function construtFunction() {
 }
 // 所返回的函数使用的不是局部作用域 , Function捕获的是全局作用域
 console.log(construtFunction()())  // ==> Hi
-
-
-
-
-
-
-
