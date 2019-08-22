@@ -27,5 +27,5 @@ console.log(isFunction(v));  //  ---> true
  * 函数式
  *
  */
-
+var square = function (x) {
 
