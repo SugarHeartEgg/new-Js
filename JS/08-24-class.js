@@ -18,6 +18,8 @@ function range(from, to) {
 
 range.methods = {
     includes: function (x) {
+        console.log(x);
+        
         return this.from <= x && x <= this.to
     },
     foreach: function (f) {
@@ -30,6 +32,9 @@ range.methods = {
 
 
 var r = range(1, 3);
-console.log(r.includes(2))
-console.log(r.foreach(console.log))
-console.log(r)
+// console.log(r.includes(2))
+// console.log(r.foreach(console.log))
+// console.log(r)
+console.log(range.methods.isPrototypeOf(r))
+
+// 9.5.2页
