@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2 class="box">我是</h2>
+
+</body>
+
+</html>
+
+<style>
+  .box {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .box::before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    width: 3px;
+    height: 25px;
+    background-color: red;
+  }
+</style>
