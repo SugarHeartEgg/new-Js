@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>04-09</title>
+  <style>
+    .reveal * {
+      display: none;
+    }
+
+    .reveal *.handle {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="timestamp" name="连怡恒"></div>
+
+
+  <div class="reveal">
+    <h1 class="handle">点我显示 text</h1>
+    <p>this paragraph is hidden It appears when you click on the title</p>
+  </div>
+</body>
+
+</html>
+
+<script>
+  /* 所有的页面逻辑在 onload时间之后启动 */
+  window.onload = function () {
+    let elements = document.getElementsByClassName("reveal");
+
+    for (let i = 0; i < elements.length; i++) {
+      let elt = elements[i];
+
+      var title = elt.getElementsByClassName("handle")[0];
+
+      addRevealHandler(title, elt);
+    }
+
+    function addRevealHandler(title, elt) {
+      title.onclick = function () {
+        if (elt.className === "reveal") {
+          elt.className = "revealed";
+        } else if (elt.className === "revealed") {
+          elt.className = "reveal";
+        }
+      }
+    }
+  }
+</script>
+
+<script>
+  let a = document.getElementById("timestamp")
+  if (a.firstChild === null) {
+    a.appendChild(document.createTextNode(new Date().toString()));
+    a.style.backgroundColor = "red";
+    a.style.width = "400px";
+    a.style.height = "100px";
+    a.className = "highlight";
+
+    a.onclick = function (e) {
+      this.innerHTML = new Date().toString();
+
+      a.style.width = "500px";
+      a.style.margin = "0 auto";
+      a.style.textAlign = "center";
+      a.style.color = "hotpink";
+      a.style.backgroundColor = "yellow";
+    }
+  }
+</script>
+
+
+<script src="../../../JS/2020/04-09/04-09_toC-JavaScript.js"></script>
+
+
+

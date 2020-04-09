@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@v0.3.2/http/server.ts";
+import * as  serve from "https://deno.land/std@v0.3.2/http/server";
 // import { uuid } from "https://deno.land/x/uuid/mod.ts";
 
 async function main() {
