@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../../JS/2020/06-13/06-13.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<script>
+  // 初始化script 标签
+  (function init() {
+    let script = document.createElement('script')
+    script.id = 'my'
+    document.getElementsByTagName('head')[0].appendChild(script)
+  })()
+
+
+  // 赋值参数 给到 script
+  function isMy() {
+    let thisUrl = '123123123123';
+
+    let ma = document.getElementById('my')
+    ma.defer = true
+    ma.async = true
+    ma.type = 'text/javascript'
+    ma.src = `https://www.lianyiheng.com/${thisUrl}`
+  }
+  isMy()
+</script>
